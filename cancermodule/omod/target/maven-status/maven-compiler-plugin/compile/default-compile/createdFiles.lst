@@ -1,0 +1,3 @@
+org/openmrs/module/cancermodule/fragment/controller/UsersFragmentController.class
+org/openmrs/module/cancermodule/extension/html/AdminList.class
+org/openmrs/module/cancermodule/web/controller/CancermoduleController.class

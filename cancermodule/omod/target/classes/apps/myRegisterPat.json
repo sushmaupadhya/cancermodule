@@ -1,0 +1,144 @@
+   {
+    "id": "referenceapplication.registrationapp.myRegisterPat",
+    "instanceOf": "registrationapp.registerPatient",
+    "label": "My Register Patient",
+    "description": "Create MY new Patient Record",
+    "extensions": [
+        {
+            "id": "referenceapplication.registrationapp.myRegisterPat.homepageLink",
+            "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+            "type": "link",
+            "label": "My Register Patient",
+            "url": "registrationapp/registerPatient.page?appId=referenceapplication.registrationapp.myRegisterPat",
+            "icon": "icon-user",
+            "order": 1,
+            "requiredPrivilege": "App: registrationapp.registerPatient"
+        }
+    ],
+    "config": {
+        "afterCreatedUrl": "/coreapps/clinicianfacing/patient.page?patientId={{patientId}}",
+        "sections": [
+            {
+                "id": "demographics",
+                "questions": [
+                    {
+                    "legend": "Pre-existing conditions",
+                    "fields": [
+                        {
+                            "type": "personAttribute",
+                            "label": "Pre-Existing Conditions",
+                            "formFieldName": "preExixtingConditions",
+                            "uuid": "da6e049f-76b7-49b9-817b-e4de5d1131f6",
+                            "widget": {
+                                "providerName": "uicommons",
+                                "fragmentId": "field/text"
+                            }
+                        }
+                    ]
+                    },
+
+		    {
+                    "legend": "Blood Group",
+                    "fields": [
+                        {
+                            "type": "personAttribute",
+                            "label": "Blood Group",
+                            "formFieldName": "bloodGroup",
+                            "uuid": "02793cdb-7fde-461a-a4f4-21dd56e159f6",
+                            "widget": {
+                                "providerName": "uicommons",
+                                "fragmentId": "field/text"
+                            },
+                             "cssClasses": ["required"]
+                        }
+                    ]
+                    },
+
+		    {
+                    "legend": "Rh typing",
+                    "fields": [
+                        {
+                            "type": "personAttribute",
+                            "label": "Rh-Type",
+                            "formFieldName": "rhTyping",
+                            "uuid": "146b69ae-8203-41ea-9b87-435b245199ee",
+                            "widget": {
+                                "providerName": "uicommons",
+                                "fragmentId": "field/text"
+                            }
+                        }
+                    ]
+                    },
+                   
+		    {
+                    "legend": "Patient Habits",
+                    "fields": [
+                        {
+                            "type": "personAttribute",
+                            "label": "Patient Habits",
+                            "formFieldName": "patientHabits",
+                            "uuid": "91366b64-2a7c-4f8b-b28f-5fe3fa83ee2a",
+                            "widget": {
+                                "providerName": "uicommons",
+                                "fragmentId": "field/text"
+                            }
+                        }
+                    ]
+                    },
+
+	 	   {
+                    "legend": "Ethnicity",
+                    "fields": [
+                        {
+                            "type": "personAttribute",
+                            "label": "Ethnicity",
+                            "formFieldName": "ethnicity",
+                            "uuid": "fcd90109-6c55-4f07-a9af-beb58d2e6d8e",
+                            "widget": {
+                                "providerName": "uicommons",
+                                "fragmentId": "field/text"
+                            }
+                        }
+                    ]
+                    }
+		]
+               },
+           	 {
+                "id": "contactInfo",
+                "label": "registrationapp.patient.contactInfo.label",
+                "questions": [
+                    {
+                        "legend": "Person.address",
+                        "fields": [
+                            {
+                                "type": "personAddress",
+                                "label": "registrationapp.patient.address.question",
+                              "widget": {
+                                                 "providerName": "uicommons",
+                                                 "fragmentId": "field/personAddress"
+                                               }
+                            }
+                        ]
+                    },
+                    {
+                        "legend": "registrationapp.patient.phone.label",
+                        "id": "phoneNumberLabel",
+                        "fields": [
+                           		{
+		                        "type": "personAttribute",
+		                        "label": "registrationapp.patient.phone.question",
+		                        "formFieldName": "phoneNumber",
+		                        "uuid": "14d4f066-15f5-102d-96e4-000c29c2a5d7",
+		                        "widget": {
+				                    "providerName": "uicommons",
+				                    "fragmentId": "field/text"
+		                    		  },
+		                        "cssClasses": ["phone"]
+                           	 	}
+                       		  ]	
+                    }
+                ]
+            }
+        ]
+    }
+}
